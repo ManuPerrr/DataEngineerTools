@@ -11,4 +11,12 @@ class ChurchillQuotesSpider(scrapy.Spider):
             text_value = text_value.replace("“", "")
             text_value = text_value.replace("”", "")
             #fin exercice 3
-            yield { 'text' : text_value }
+            yield { 
+                'text' : text_value,
+                'author' : None 
+            }
+        for cit in response.xpath('//div[@class="figsco__fake__col-9]"'):
+            text_value = cit.xpath('a/text()').extract_first()
+            print(text_value)
+
+        
