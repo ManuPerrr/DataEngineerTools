@@ -1,6 +1,6 @@
 import scrapy
 
-class ChurchillQuotesSpider(scrapy.Spider):
+class TitleSpider (scrapy.Spider):
     name = "Titre de film"
     start_urls = ["https://www.allocine.fr/film/meilleurs/",]
 
