@@ -7,13 +7,7 @@ from ..items import ArticleItem
 class AllocineSpider(scrapy.Spider):
     name = "besttitlev1"
     allowed_domains = ["www.allocine.fr"]
-    start_urls = [
-        "https://www.allocine.fr/film/meilleurs",
-        "https://www.allocine.fr/film/meilleurs/?page=2",
-        "https://www.allocine.fr/film/meilleurs/?page=3",
-        "https://www.allocine.fr/film/meilleurs/?page=4",
-        "https://www.allocine.fr/film/meilleurs/?page=5"
-    ]
+    start_urls = ["https://www.allocine.fr/film/meilleurs/?page="+str(i) for i in range (1, 31)]
 
     def parse(self, response):
         all_titlelinks = {
