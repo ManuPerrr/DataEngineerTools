@@ -4,7 +4,7 @@ from ..items import ArticleItem
 
 
 
-class AllocineSpider(scrapy.Spider):
+class AllocineSpider1(scrapy.Spider):
     name = "besttitlev1"
     allowed_domains = ["www.allocine.fr"]
     start_urls = ["https://www.allocine.fr/film/meilleurs/?page="+str(i) for i in range (1, 31)]

@@ -7,17 +7,16 @@ from scrapy import Request
 from ..items import ArticleItem
 
 
-class AllocineSpider(scrapy.Spider):
+class AllocineSpider3(scrapy.Spider):
     name = "besttitlev3"
     user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0'
     allowed_domains = ["www.allocine.fr"]
     start_urls = ["https://www.allocine.fr/film/meilleurs/?page="+str(i) for i in range (1, 31)]
     
     def getlinks(self):
-        #path = os.path.dirname(os.path.abspath(__file__))
-        #path = path.replace("newscrawler/spiders", "titlelink.csv")
-        path = "C:/Users/perei/Desktop/Data Engineering/DataEngineerTools/6Evaluation/Projet/newscrawler/titlelink.csv"
-        print(path)
+        path = os.path.dirname(os.path.abspath(__file__))
+        path = path.replace("newscrawler/spiders", "titlelink.csv")
+        #path = "C:/Users/perei/Desktop/Data Engineering/DataEngineerTools/6Evaluation/Projet/newscrawler/titlelink.csv"
         df = pd.read_csv(path).to_dict()
         #On récupère le dictionnaire de chaque page qui relie titre et lien sous la forme d'une string par page
         l = list(list(df.values())[0].values())

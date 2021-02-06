@@ -7,7 +7,7 @@ from scrapy import Request
 from ..items import ArticleItem
 
 
-class AllocineSpider(scrapy.Spider):
+class AllocineSpider2(scrapy.Spider):
     name = "besttitlev2"
     allowed_domains = ["www.allocine.fr"]
     start_urls = ["https://www.allocine.fr/film/meilleurs/?page="+str(i) for i in range (1, 31)]
@@ -16,7 +16,6 @@ class AllocineSpider(scrapy.Spider):
         #path = os.path.dirname(os.path.abspath(__file__))
         #path = path.replace("newscrawler/spiders", "titlelink.csv")
         path = "C:/Users/perei/Desktop/Data Engineering/DataEngineerTools/6Evaluation/Projet/newscrawler/titlelink.csv"
-        print(path)
         df = pd.read_csv(path).to_dict()
         #On récupère le dictionnaire de chaque page qui relie titre et lien sous la forme d'une string par page
         l = list(list(df.values())[0].values())

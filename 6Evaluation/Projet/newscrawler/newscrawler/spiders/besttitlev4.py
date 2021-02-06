@@ -7,7 +7,7 @@ from scrapy import Request
 from ..items import ArticleItem
 
 
-class AllocineSpider(scrapy.Spider):
+class AllocineSpider4(scrapy.Spider):
     name = "besttitlev4"
     user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0'
     allowed_domains = ["www.allocine.fr"]
@@ -27,7 +27,7 @@ class AllocineSpider(scrapy.Spider):
         title = response.css("#content-layout .titlebar-title.titlebar-title-lg::text").extract()[0]
         titleint = response.css(".ovw-synopsis-info .that::text")[0].extract() 
         catinfo1 = response.css(".ovw-synopsis-info .what.light::text")[0].extract()
-        synop = response.css("#synopsis-details .content-txt::text").extract()[0].strip()
+        synop = " ".join(response.css("#synopsis-details .content-txt::text").extract()).strip()
         date = response.css(".meta-body").css("span::text").extract_first().strip()
         duree = response.css(".meta-body-item.meta-body-info::text").extract()[3].strip()
         genre = response.css(".meta-body-item.meta-body-info").css("span::text")[3:].extract()
@@ -37,7 +37,6 @@ class AllocineSpider(scrapy.Spider):
         nbrcrit = response.css(".stareval").css(".stareval-review::text")[1].extract().split(" ")[4]
         notepub = response.css(".stareval").css(".stareval-note::text")[1].extract()
         notepre = response.css(".stareval-note::text")[0].extract()
-        
         
         yield {
             "title":title,
