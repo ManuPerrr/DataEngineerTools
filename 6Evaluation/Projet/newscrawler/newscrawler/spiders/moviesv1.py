@@ -61,9 +61,9 @@ class MovieSpider1(scrapy.Spider):
                 "titleint":titleint,
                 "catinfo":catinfo,
                 "synop":synop,
+                "genre":genre,
                 "date":date,
                 "duree":duree,
-                "genre":genre,
                 "cast":cast,
                 "real":real,
                 "nbrnote":nbrnote,
@@ -77,9 +77,9 @@ class MovieSpider1(scrapy.Spider):
         titleint = response.meta['titleint']
         catinfo = response.meta['catinfo']
         synop = response.meta['synop']
+        genre = response.meta['genre']
         date = response.meta['date']
         duree = response.meta['duree']
-        genre = response.meta['genre']
         cast = response.meta['cast']
         real = response.meta['real']
         nbrnote = response.meta['nbrnote']
@@ -94,9 +94,9 @@ class MovieSpider1(scrapy.Spider):
                 "titleint":titleint,
                 "catinfo":catinfo,
                 "synop":synop,
+                "genre":genre,
                 "date":date,
                 "duree":duree,
-                "genre":genre,
                 "cast":cast,
                 "real":real,
                 "nbrnote":nbrnote,
@@ -110,9 +110,9 @@ class MovieSpider1(scrapy.Spider):
         titleint = response.meta['titleint']
         catinfo = response.meta['catinfo']
         synop = response.meta['synop']
+        genre = response.meta['genre']
         date = response.meta['date']
         duree = response.meta['duree']
-        genre = response.meta['genre']
         cast = response.meta['cast']
         real = response.meta['real']
         nbrnote = response.meta['nbrnote']
@@ -130,9 +130,9 @@ class MovieSpider1(scrapy.Spider):
             "titleint":titleint,
             "catinfo":catinfo,
             "synop":synop,
+            "genre":genre,
             "date":date,
             "duree":duree,
-            "genre":genre,
             "cast":cast,
             "real":real,
             "nbrnote":nbrnote,
